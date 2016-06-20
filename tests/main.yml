@@ -8,6 +8,7 @@
       changed_when: false
       with_items:
         - mysql
+
     - name: Run ansible galaxy
       become: False
       local_action: "command ansible-galaxy install -p roles --force {{ item }}"
