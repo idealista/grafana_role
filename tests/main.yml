@@ -1,7 +1,14 @@
 ---
 - hosts: all
   pre_tasks:
-    - name: run ansible galaxy
+    - name: Ensure role folder exists
+      become: False
+      local_action: "command mkdir -p {{ item }}"
+      run_once: true
+      changed_when: false
+      with_items:
+        - mysql
+    - name: Run ansible galaxy
       become: False
       local_action: "command ansible-galaxy install -p roles --force {{ item }}"
       run_once: true
