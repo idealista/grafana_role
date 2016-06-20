@@ -9,6 +9,6 @@ cd tests
 vagrant up
 ```
 
-To check the installation check 10.0.0.2:8080 and log with your ldap credentials or grafana admin user.
+To check the installation grafana is running on 10.0.0.2:8080, log with your ldap credentials or grafana admin user.
 
 You can edit grafana config and dashboards via template or webui.
