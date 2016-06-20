@@ -1,0 +1,3 @@
+---
+grafana_repo: 'deb https://packagecloud.io/grafana/stable/debian/ {{ ansible_lsb.codename }} main'
+grafana_key: 'https://packagecloud.io/gpg.key'

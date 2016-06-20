@@ -1,0 +1,15 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: run ansible galaxy
+      become: False
+      local_action: "command ansible-galaxy install -p roles --force {{ item }}"
+      run_once: true
+      register: command_result
+      changed_when: '"was installed successfully" in command_result.stderr'
+      failed_when: '"NOT installed successfully" in command_result.stderr or "ERROR!" in command_result.stderr'
+      with_items:
+        - "git+http://deployer:{{ git_deployer_password }}@git.sys.idealista/scm/as/mysql-role.git,origin/master,mysql"
+  roles:
+    - mysql
+    - grafana

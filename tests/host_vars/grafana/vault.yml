@@ -1,0 +1,3 @@
+---
+vault_git_deployer_password: deployer
+vault_grafana_ldap_password: deployer

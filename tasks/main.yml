@@ -1,0 +1,47 @@
+---
+- name: Install dependencies
+  apt:
+    pkg: "{{ item }}"
+    state: latest
+    install_recommends: yes
+  with_items:
+    - apt-transport-https
+
+- name: Debian repo key on package cloud
+  apt_key:
+    url: "{{ grafana_key }}"
+
+- name: Debian grafana repo
+  apt_repository:
+    repo: "{{ grafana_repo }}"
+
+- name: Install grafana
+  apt:
+    pkg: grafana
+    state: present
+
+- name: Links grafana dir to /
+  file:
+    src: /etc/grafana
+    dest: /grafana
+    state: link
+    force: yes
+    owner: grafana
+    group: grafana
+
+- name: Copy configuration
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/grafana/{{ item }}"
+    owner: grafana
+    group: grafana
+  notify: restart grafana
+  with_items:
+    - ldap.toml
+    - grafana.ini
+    
+- name: Ensure grafana is started and enabled on boot
+  service:
+    name: grafana-server
+    enabled: yes
+    state: running 

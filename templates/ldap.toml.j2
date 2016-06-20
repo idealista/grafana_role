@@ -1,0 +1,22 @@
+verbose_logging = false
+
+[[servers]]
+host = "{{ grafana_ldap_server }}"
+port = {{ grafana_ldap_port }}
+use_ssl = false
+ssl_skip_verify = true
+bind_dn = "{{ grafana_ldap_dn }}"
+bind_password = '{{ grafana_ldap_password }}'
+search_filter = "(cn=%s)"
+search_base_dns = ["DC=oficina,DC=IDEALISTA"]
+
+[servers.attributes]
+name = "displayname"
+surname = "sn"
+username = "cn"
+member_of = "memberOf"
+email = "mail"
+
+[[servers.group_mappings]]
+group_dn = "*"
+org_role = "Editor"
