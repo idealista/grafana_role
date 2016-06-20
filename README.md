@@ -1,6 +1,6 @@
 # Grafana Role
 
-This role instalss grafana with MySQL as backend using http://git/projects/AS/repos/mysql-role
+This role installs grafana with MySQL as backend using http://git/projects/AS/repos/mysql-role
 
 To test it
 
