@@ -1,4 +1,3 @@
 main.retry
 tests/main.retry
 tests/.vagrant
-tests/roles/mysql
