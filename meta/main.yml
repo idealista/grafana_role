@@ -2,3 +2,6 @@
 galaxy_info:
   author: Alberto Garcia
   description: Prometheus grafana role
+
+dependencies:
+  - { role: mysql }
