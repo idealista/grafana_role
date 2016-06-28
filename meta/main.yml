@@ -4,4 +4,4 @@ galaxy_info:
   description: Prometheus grafana role
 
 dependencies:
-  - { role: mysql }
+  - mysql
