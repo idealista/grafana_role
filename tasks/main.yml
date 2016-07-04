@@ -39,9 +39,22 @@
   with_items:
     - ldap.toml
     - grafana.ini
-    
+
 - name: Ensure grafana is started and enabled on boot
   service:
     name: grafana-server
     enabled: yes
-    state: running 
+    state: running
+
+- name: Import dashboards
+  uri:
+    url: "{{ ansible_nodename }}:8080/api/dashboards/db"
+    method: POST
+    HEADER_Accept: application/json
+    HEADER_Content-Type: application/json
+    HEADER_Authorization: "Bearer {{ grafana_token }}"
+    body: "{{ item.0.dashboard }}"
+    response: 200
+  with_subelements:
+    - "{{ grafana_dashboards|default(omit) }}"
+    - hosts
