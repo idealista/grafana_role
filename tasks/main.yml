@@ -68,7 +68,6 @@
     body: "{{ lookup('file', '/tmp/' + item.1 + '_' + item.0.dashboard ) }}"
     body_format: json
     response: 200
-    return_content: yes
   with_subelements:
     - "{{ grafana_dashboards|default(omit) }}"
     - hosts
