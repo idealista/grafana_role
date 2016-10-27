@@ -57,6 +57,7 @@
     - "{{ grafana_dashboards|default(omit) }}"
     - hosts
   delegate_to: localhost
+  when: grafana_token is defined
 
 - name: Import dashboards
   uri:
@@ -71,3 +72,4 @@
   with_subelements:
     - "{{ grafana_dashboards|default(omit) }}"
     - hosts
+  when: grafana_token is defined
