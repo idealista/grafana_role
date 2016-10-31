@@ -54,10 +54,10 @@
     src: "{{ item.0.dashboard }}.j2"
     dest: "/tmp/{{ item.1 }}_{{ item.0.dashboard }}"
   with_subelements:
-    - "{{ grafana_dashboards|default(omit) }}"
+    - "{{ grafana_dashboards | default('[]') }}"
     - hosts
   delegate_to: localhost
-  when: grafana_token is defined
+  when: grafana_token is defined and grafana_dashboards is defined
 
 - name: Import dashboards
   uri:
@@ -70,6 +70,6 @@
     body_format: json
     response: 200
   with_subelements:
-    - "{{ grafana_dashboards|default(omit) }}"
+    - "{{ grafana_dashboards|default('[]') }}"
     - hosts
-  when: grafana_token is defined
+  when: grafana_token is defined and grafana_dashboards is defined
