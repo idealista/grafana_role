@@ -53,7 +53,7 @@
     HEADER_Accept: application/json
     HEADER_Content-Type: application/json
     HEADER_Authorization: "Bearer {{ grafana_token }}"
-    body: "{{ lookup('file', item.0.dashboard + '.j2' ) }}"
+    body: "{{ lookup('template', item.0.dashboard + '.j2') | to_json }}"
     body_format: json
     response: 200
   delegate_to: localhost
