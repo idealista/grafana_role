@@ -46,19 +46,6 @@
     enabled: yes
     state: running
 
-# As far as I know, there is no possible way on Ansible to template out a file into a variable
-# There is no way to lookup a remote file either.
-
-#- name: Template out Dashboards
-#  template:
-#    src: "{{ item.0.dashboard }}.j2"
-#    dest: "/tmp/{{ item.1 }}_{{ item.0.dashboard }}"
-#  with_subelements:
-#    - "{{ grafana_dashboards | default('[]') }}"
-#    - hosts
-#  delegate_to: localhost
-#  when: grafana_token is defined and grafana_dashboards is defined
-
 - name: Import dashboards
   uri:
     url: "http://{{ ansible_nodename }}:8080/api/dashboards/db"
@@ -66,9 +53,10 @@
     HEADER_Accept: application/json
     HEADER_Content-Type: application/json
     HEADER_Authorization: "Bearer {{ grafana_token }}"
-    body: "{{ lookup('file', item.0.dashboard ) }}"
+    body: "{{ lookup('file', item.0.dashboard + '.j2' ) }}"
     body_format: json
     response: 200
+  delegate_to: localhost
   with_subelements:
     - "{{ grafana_dashboards|default('[]') }}"
     - hosts
