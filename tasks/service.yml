@@ -1,0 +1,8 @@
+---
+
+- name: GRAFANA | Configuring service
+  systemd:
+    name: grafana-server
+    state: "{{ grafana_service_state }}"
+    enabled: "{{ grafana_service_enabled }}"
+    daemon_reload: yes

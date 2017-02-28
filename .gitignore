@@ -1,4 +1,6 @@
-main.retry
-tests/main.retry
-tests/.vagrant
-tests/roles/mysql
+tests/playbook.retry
+tests/.cache
+tests/__pycache__
+.molecule
+.vagrant
+.cache

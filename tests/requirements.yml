@@ -1,5 +1,5 @@
 ---
-- src: http://deployer@git.sys.idealista/scm/as/mysql-role.git
+- src: http://bitbucket.int.sys.idealista/scm/as/mysql-role.git
   scm: git
   version: origin/master
   name: mysql

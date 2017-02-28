@@ -1,0 +1,12 @@
+---
+
+- name: GRAFANA | Copy configuration
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/grafana/{{ item }}"
+    owner: grafana
+    group: grafana
+  notify: restart grafana
+  with_items:
+    - ldap.toml
+    - grafana.ini

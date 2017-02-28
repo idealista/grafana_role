@@ -6,9 +6,9 @@ port = {{ grafana_ldap_port }}
 use_ssl = false
 ssl_skip_verify = true
 bind_dn = "{{ grafana_ldap_dn }}"
-bind_password = '{{ grafana_ldap_password }}'
-search_filter = "(cn=%s)"
-search_base_dns = ["DC=oficina,DC=IDEALISTA"]
+bind_password = "{{ grafana_ldap_password }}"
+search_filter = "{{ grafana_ldap_filter }}"
+search_base_dns = ["{{ grafana_ldap_base_dn }}"]
 
 [servers.attributes]
 name = "displayname"

@@ -1,7 +1,17 @@
 ---
+
 galaxy_info:
-  author: Alberto Garcia
-  description: Prometheus grafana role
+  company: Idealista S.A.
+  description: Grafana server
+  min_ansible_version: 2.2
+  license: Apache 2.0
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+  categories:
+    - dashboard
+    - visualization
 
 dependencies:
   - mysql

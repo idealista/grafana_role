@@ -1,3 +1,53 @@
 ---
-grafana_repo: 'deb https://packagecloud.io/grafana/stable/debian/ {{ ansible_lsb.codename }} main'
-grafana_key: 'https://packagecloud.io/gpg.key'
+## General
+
+## Service options
+
+grafana_app_mode: production
+
+# start on boot
+grafana_service_enabled: True
+# current state: started, stopped
+grafana_service_state: started
+
+# Files & Paths
+grafana_data_path: "/var/lib/grafana"
+grafana_plugins_path: "{{ grafana_data_path }}/plugins"
+grafana_log_path: "/var/log/grafana"
+grafana_dashboards_path: "{{ grafana_data_path }}/dashboards"
+
+# Port & host
+grafana_port: 8080
+grafana_domain: "{{ ansible_domain }}"
+
+## DATABASE
+grafana_database_type: mysql
+grafana_database_host: 127.0.0.1
+grafana_database_port: 3306
+grafana_database_database: grafana
+grafana_database_user: grafana
+grafana_database_password: grafana
+grafana_database_ssl_mode: false
+
+## SECURITY
+grafana_admin_user: grafana
+grafana_admin_password: grafana
+
+## USERS
+grafana_users_allow_signup: false
+
+## LDAP
+grafana_ldap_authentication: false
+grafana_ldap_server: localhost
+grafana_ldap_port: 10389
+grafana_ldap_dn: uid=admin,ou=system
+grafana_ldap_password: secret
+grafana_ldap_base_dn: ou=basicauth,ou=users,ou=axis,o=abc,c=au
+grafana_ldap_filter: (uid={0})
+
+## LOG
+grafana_log_mode: console file
+grafana_log_level: info
+
+## dashboards
+grafana_dashboard_templates_path: "{{ playbook_dir }}/templates/grafana/dashboards"

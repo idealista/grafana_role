@@ -1,5 +1,6 @@
 ---
 - name: restart grafana
-  service:
+  systemd:
     name: grafana-server
     state: restarted
+  when: grafana_service_state != 'stopped'

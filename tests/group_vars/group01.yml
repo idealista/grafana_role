@@ -1,5 +1,4 @@
 ---
-git_deployer_password: "{{ vault_git_deployer_password }}"
 
 mysql_root_password: secret
 mysql_databases:
@@ -18,7 +17,10 @@ grafana_mysql_password: grafana
 grafana_admin_user: grafana
 grafana_admin_password: grafana
 
-grafana_ldap_server: 10.80.5.61
-grafana_ldap_port: 3268
-grafana_ldap_dn: cn=jenkins,ou=Genericas,ou=Oficinas,dc=oficina,dc=IDEALISTA
-grafana_ldap_password: "{{ vault_grafana_ldap_password }}"
+#grafana_api_key: eyJrIjoiYzJ2ZnphQXdyQzZCT0hKNmxXbkpRTkZPREFhdm9vYkgiLCJuIjoiYmVuZGVycyIsImlkIjoxfQ==
+
+grafana_dashboard_templates_path: "{{ playbook_dir }}/templates"
+
+grafana_dashboards:
+  test.json.j2:
+    title: Production Overview 4
