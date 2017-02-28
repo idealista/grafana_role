@@ -24,3 +24,7 @@ grafana_dashboard_templates_path: "{{ playbook_dir }}/templates"
 grafana_dashboards:
   test.json.j2:
     title: Production Overview 4
+  machine.json.j2:
+    title: featuretoggle
+    tags: [ 'featuretoggle', 'pro', 'all']
+    hosts: ['featuretoggle-api1.int.sys.idealista', 'featuretoggle-api2.int.sys.idealista']

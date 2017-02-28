@@ -1,0 +1,15 @@
+---
+
+- debug: msg={{ lookup('template', 'templates/datasource.json.j2')}}
+
+- name: GRAFANA | Import datasource
+  uri:
+    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources"
+    method: POST
+    HEADER_Accept: application/json
+    HEADER_Content-Type: application/json
+    HEADER_Authorization: "Bearer {{ grafana_api_key }}"
+    body: "{{ lookup('template', 'templates/datasource.json.j2')}}"
+    body_format: json
+    response: 200
+  when: grafana_api_key is defined
