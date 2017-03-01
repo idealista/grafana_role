@@ -1,5 +1,6 @@
 ---
 
+## MYSQL
 mysql_root_password: secret
 mysql_databases:
   - name: 'grafana'
@@ -11,13 +12,8 @@ mysql_users:
     priv:
     - grafana.*:ALL
 
-grafana_mysql_database: grafana
-grafana_mysql_user: grafana
-grafana_mysql_password: grafana
-grafana_admin_user: grafana
-grafana_admin_password: grafana
-
-#grafana_api_key: eyJrIjoiYzJ2ZnphQXdyQzZCT0hKNmxXbkpRTkZPREFhdm9vYkgiLCJuIjoiYmVuZGVycyIsImlkIjoxfQ==
+## GRAFANA
+grafana_port: 8081
 
 grafana_dashboard_templates_path: "{{ playbook_dir }}/templates"
 

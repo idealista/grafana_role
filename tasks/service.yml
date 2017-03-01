@@ -6,3 +6,10 @@
     state: "{{ grafana_service_state }}"
     enabled: "{{ grafana_service_enabled }}"
     daemon_reload: yes
+
+- name: GRAFANA | Wait for service listening
+  wait_for:
+    host: "{{ inventory_hostname }}"
+    port: "{{ grafana_port }}"
+    state: "{{ grafana_service_state }}"
+    timeout: 30

@@ -55,7 +55,8 @@ grafana_dashboard_templates_path: "{{ playbook_dir }}/templates/grafana/dashboar
 ## DATASOURCE
 grafana_datasource_name: Prometheus
 grafana_datasource_type: prometheus
-grafana_datasource_url: http://localhost:9090
+grafana_datasource_url_protocol: http
+grafana_datasource_url: localhost:9090 #No protocol
 grafana_datasource_basicauth: 'false'
 grafana_datasource_basicauth_user:
 grafana_datasource_basicauth_password:

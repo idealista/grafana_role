@@ -1,7 +1,8 @@
 {
+  "id": 1,
   "name": "{{ grafana_datasource_name }}",
   "type": "{{ grafana_datasource_type }}",
-  "url": "{{ grafana_datasource_url }}",
+  "url": "{{ grafana_datasource_url_protocol }}://{{ grafana_datasource_url }}",
   "access": "proxy",
   "basicAuth": {{ grafana_datasource_basicauth }},
   "basicAuthUser": "{{ grafana_datasource_basicauth_user }}",
