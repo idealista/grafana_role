@@ -27,7 +27,9 @@
     body: "{{ lookup('template', 'templates/datasource.json.j2')}}"
     body_format: json
     response: 200
-  when: datasource_check.status != 200 and grafana_service_state in ['started', 'restarted', 'reloaded']
+  when:
+    - datasource_check.status != 200
+    - grafana_service_state in ['started', 'restarted', 'reloaded']
 
 - name: GRAFANA | Import stats dashboard
   uri:
@@ -38,7 +40,9 @@
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
-    body: "{{ lookup('template', 'templates/prometheus_stats.json.j2')}}"
+    body: "{{ lookup('template', 'templates/dashboards/prometheus_stats.json.j2')}}"
     body_format: json
     response: 200
-  when: grafana_datasource_type == 'prometheus' and grafana_service_state == 'started'
+  when:
+    - grafana_datasource_type == 'prometheus'
+    - grafana_service_state == 'started'

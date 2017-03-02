@@ -16,11 +16,11 @@ mysql_users:
 grafana_port: 8081
 
 grafana_dashboard_templates_path: "{{ playbook_dir }}/templates"
-
+#grafana_api_key: eyJrIjoiOXVXVWJSNU9ZNGZTZm1nMEtFdkR0VjVKYlB0d3lhOHYiLCJuIjoidGVzdCIsImlkIjoxfQ==
 grafana_dashboards:
   test.json.j2:
     title: Production Overview 4
-  machine.json.j2:
+  machine:
     title: featuretoggle
-    tags: [ 'featuretoggle', 'pro', 'all']
-    hosts: ['featuretoggle-api1.int.sys.idealista', 'featuretoggle-api2.int.sys.idealista']
+    tags: [ 'featuretoggle', 'internal']
+    hosts: ['featuretoggle1.idealista', 'featuretoggle2.idealista']

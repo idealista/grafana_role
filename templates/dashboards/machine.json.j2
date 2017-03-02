@@ -1,4 +1,4 @@
-{% set props = grafana_dashboards[item | basename]%}
+{% set props = grafana_dashboards['machine']%}
 {
   "dashboard": {
     "id": null,
@@ -520,14 +520,7 @@
       "height": "150px",
       "panels": [
         {
-          "alert": {
-            "crit": {
-              "op": ">"
-            },
-            "warn": {
-              "op": ">"
-            }
-          },
+
           "alerting": {},
           "aliasColors": {},
           "bars": false,
@@ -611,14 +604,7 @@
           ]
         },
         {
-          "alert": {
-            "crit": {
-              "op": ">"
-            },
-            "warn": {
-              "op": ">"
-            }
-          },
+
           "alerting": {},
           "aliasColors": {},
           "bars": false,
@@ -1303,14 +1289,7 @@
       "height": "200px",
       "panels": [
         {
-          "alert": {
-            "crit": {
-              "op": ">"
-            },
-            "warn": {
-              "op": ">"
-            }
-          },
+
           "alerting": {},
           "aliasColors": {},
           "bars": false,
