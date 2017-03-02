@@ -1,9 +1,8 @@
-{% set props = grafana_dashboards['machine']%}
 {
   "dashboard": {
     "id": null,
-    "title": "{{ props.title }}",
-    "tags": {{props.tags}},
+    "title": "{{ item.title }}",
+    "tags": {{item.tags}},
     "style": "dark",
     "timezone": "browser",
     "editable": true,
@@ -15,8 +14,8 @@
           "allValue": null,
           "current": {
             "tags": [],
-            "text": "{{ props.hosts.0 }}",
-            "value": "{{ props.hosts.0 }}"
+            "text": "{{ item.hosts.0 }}",
+            "value": "{{ item.hosts.0 }}"
           },
           "hide": 0,
           "includeAll": false,
@@ -24,7 +23,7 @@
           "multi": false,
           "name": "host",
           "options": [
-            {% for host in props.hosts %}
+            {% for host in item.hosts %}
             {
               "selected": {% if loop.first %}true{% else %}false{% endif %},
               "text": "{{ host }}",

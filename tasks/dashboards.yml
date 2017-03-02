@@ -2,7 +2,7 @@
 
 - name: GRAFANA | Import machine dashboard
   uri:
-    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/dashboards/db"
+    url: "http://{{ grafana_host }}:{{ grafana_port }}/api/dashboards/db"
     method: POST
     HEADER_Accept: application/json
     HEADER_Content-Type: application/json
@@ -11,12 +11,13 @@
     body_format: json
     response: 200
   when:
-    - grafana_api_key is defined
-    - grafana_dashboards['machine'] is defined
+    - grafana_dashboards is defined
+    - grafana_dashboards.machine is defined
+  with_items: "{{ grafana_dashboards['machine'] | default(omit) }}"
 
 - name: GRAFANA | Import custom dashboards
   uri:
-    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/dashboards/db"
+    url: "http://{{ grafana_host }}:{{ grafana_port }}/api/dashboards/db"
     method: POST
     HEADER_Accept: application/json
     HEADER_Content-Type: application/json
@@ -26,4 +27,3 @@
     response: 200
   with_fileglob:
     - "{{ grafana_dashboard_templates_path }}/*"
-  when: grafana_api_key is defined

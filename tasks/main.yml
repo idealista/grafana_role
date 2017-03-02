@@ -22,5 +22,7 @@
 
 - name: GRAFANA | Dashboards
   include: dashboards.yml
+  when:
+    - grafana_api_key is defined
   tags:
     - dashboards
