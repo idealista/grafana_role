@@ -191,7 +191,7 @@ enabled = true
 
 #################################### Auth LDAP ###########################
 [auth.ldap]
-enabled = true
+enabled = {{ grafana_ldap_authentication }}
 config_file = /etc/grafana/ldap.toml
 allow_sign_up = {{ grafana_users_allow_signup }}
 
