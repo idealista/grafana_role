@@ -1,0 +1,29 @@
+---
+
+- name: GRAFANA | Import machine dashboard
+  uri:
+    url: "http://{{ grafana_host }}:{{ grafana_port }}/api/dashboards/db"
+    method: POST
+    HEADER_Accept: application/json
+    HEADER_Content-Type: application/json
+    HEADER_Authorization: "Bearer {{ grafana_api_key }}"
+    body: "{{ lookup('template', 'templates/dashboards/machine.json.j2') }}"
+    body_format: json
+    response: 200
+  when:
+    - grafana_dashboards is defined
+    - grafana_dashboards.machine is defined
+  with_items: "{{ grafana_dashboards['machine'] | default(omit) }}"
+
+- name: GRAFANA | Import custom dashboards
+  uri:
+    url: "http://{{ grafana_host }}:{{ grafana_port }}/api/dashboards/db"
+    method: POST
+    HEADER_Accept: application/json
+    HEADER_Content-Type: application/json
+    HEADER_Authorization: "Bearer {{ grafana_api_key }}"
+    body: "{{ lookup('template', item) }}"
+    body_format: json
+    response: 200
+  with_fileglob:
+    - "{{ grafana_dashboard_templates_path }}/*"
