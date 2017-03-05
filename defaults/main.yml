@@ -35,7 +35,7 @@ grafana_admin_user: grafana
 grafana_admin_password: grafana
 
 ## USERS
-grafana_users_allow_signup: 'true'
+grafana_users_allow_signup: 'false'
 
 ## LDAP
 grafana_ldap_authentication: 'false'
