@@ -53,9 +53,6 @@ grafana_log_level: info
 ## ORGANISATION
 #grafana_organisation:
 
-## DASHBOARDS
-grafana_dashboard_templates_path: "{{ playbook_dir }}/templates/grafana/dashboards"
-
 ## DATASOURCE
 grafana_datasource_name: Prometheus
 grafana_datasource_type: prometheus
