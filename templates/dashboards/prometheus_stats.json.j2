@@ -47,7 +47,7 @@
             },
             "targets": [
               {
-                "expr": "(time() - process_start_time_seconds{job=\"prometheus\"})",
+                "expr": "(time() - process_start_time_seconds{job=\"prometheus_statistics\"})",
                 "intervalFactor": 2,
                 "refId": "A",
                 "step": 4
