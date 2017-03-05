@@ -28,17 +28,17 @@ grafana_database_port: 3306
 grafana_database_database: grafana
 grafana_database_user: grafana
 grafana_database_password: grafana
-grafana_database_ssl_mode: false
+grafana_database_ssl_mode: 'false'
 
 ## SECURITY
 grafana_admin_user: grafana
 grafana_admin_password: grafana
 
 ## USERS
-grafana_users_allow_signup: false
+grafana_users_allow_signup: 'true'
 
 ## LDAP
-grafana_ldap_authentication: false
+grafana_ldap_authentication: 'false'
 grafana_ldap_server: localhost
 grafana_ldap_port: 10389
 grafana_ldap_dn: uid=admin,ou=system
@@ -50,7 +50,10 @@ grafana_ldap_filter: (uid={0})
 grafana_log_mode: console file
 grafana_log_level: info
 
-## dashboards
+## ORGANISATION
+#grafana_organisation:
+
+## DASHBOARDS
 grafana_dashboard_templates_path: "{{ playbook_dir }}/templates/grafana/dashboards"
 
 ## DATASOURCE

@@ -1,20 +1,18 @@
 {
   "dashboard": {
     "id": null,
-    "title": "Prometheus Stats Extended",
-    "tags": [
-      "prometheus"
-    ],
+    "title": "Prometheus Stats",
+    "tags": [],
     "style": "dark",
     "timezone": "browser",
     "editable": true,
-    "hideControls": false,
-    "sharedCrosshair": true,
+    "hideControls": true,
+    "sharedCrosshair": false,
     "rows": [
       {
         "collapse": false,
         "editable": true,
-        "height": "100px",
+        "height": 178,
         "panels": [
           {
             "cacheTimeout": null,
@@ -30,27 +28,9 @@
             "editable": true,
             "error": false,
             "format": "s",
-            "gauge": {
-              "maxValue": 100,
-              "minValue": 0,
-              "show": false,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
             "id": 5,
             "interval": null,
             "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
             "maxDataPoints": 100,
             "nullPointMode": "connected",
             "nullText": null,
@@ -58,13 +38,6 @@
             "postfixFontSize": "50%",
             "prefix": "",
             "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
             "span": 3,
             "sparkline": {
               "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -91,7 +64,32 @@
                 "value": "null"
               }
             ],
-            "valueName": "current"
+            "valueName": "current",
+            "mappingTypes": [
+              {
+                "name": "value to text",
+                "value": 1
+              },
+              {
+                "name": "range to text",
+                "value": 2
+              }
+            ],
+            "rangeMaps": [
+              {
+                "from": "null",
+                "to": "null",
+                "text": "N/A"
+              }
+            ],
+            "mappingType": 1,
+            "gauge": {
+              "show": false,
+              "minValue": 0,
+              "maxValue": 100,
+              "thresholdMarkers": true,
+              "thresholdLabels": false
+            }
           },
           {
             "cacheTimeout": null,
@@ -106,27 +104,9 @@
             "editable": true,
             "error": false,
             "format": "none",
-            "gauge": {
-              "maxValue": 100,
-              "minValue": 0,
-              "show": false,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
             "id": 6,
             "interval": null,
             "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
             "maxDataPoints": 100,
             "nullPointMode": "connected",
             "nullText": null,
@@ -134,13 +114,6 @@
             "postfixFontSize": "50%",
             "prefix": "",
             "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
             "span": 3,
             "sparkline": {
               "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -161,7 +134,32 @@
             "type": "singlestat",
             "valueFontSize": "70%",
             "valueMaps": [],
-            "valueName": "current"
+            "valueName": "current",
+            "mappingTypes": [
+              {
+                "name": "value to text",
+                "value": 1
+              },
+              {
+                "name": "range to text",
+                "value": 2
+              }
+            ],
+            "rangeMaps": [
+              {
+                "from": "null",
+                "to": "null",
+                "text": "N/A"
+              }
+            ],
+            "mappingType": 1,
+            "gauge": {
+              "show": false,
+              "minValue": 0,
+              "maxValue": 100,
+              "thresholdMarkers": true,
+              "thresholdLabels": false
+            }
           },
           {
             "cacheTimeout": null,
@@ -176,27 +174,9 @@
             "editable": true,
             "error": false,
             "format": "none",
-            "gauge": {
-              "maxValue": 100,
-              "minValue": 0,
-              "show": false,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
             "id": 7,
             "interval": null,
             "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
             "maxDataPoints": 100,
             "nullPointMode": "connected",
             "nullText": null,
@@ -204,13 +184,6 @@
             "postfixFontSize": "50%",
             "prefix": "",
             "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
             "span": 3,
             "sparkline": {
               "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -237,33 +210,7 @@
                 "value": "0"
               }
             ],
-            "valueName": "current"
-          },
-          {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-              "rgba(245, 54, 54, 0.9)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(50, 172, 45, 0.97)"
-            ],
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "format": "s",
-            "gauge": {
-              "maxValue": 100,
-              "minValue": 0,
-              "show": false,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
-            "id": 23,
-            "interval": null,
-            "isNew": true,
-            "links": [],
-            "mappingType": 1,
+            "valueName": "current",
             "mappingTypes": [
               {
                 "name": "value to text",
@@ -274,54 +221,140 @@
                 "value": 2
               }
             ],
-            "maxDataPoints": 100,
-            "nullPointMode": "connected",
-            "nullText": null,
-            "postfix": "",
-            "postfixFontSize": "50%",
-            "prefix": "",
-            "prefixFontSize": "50%",
             "rangeMaps": [
               {
                 "from": "null",
-                "text": "N/A",
-                "to": "null"
+                "to": "null",
+                "text": "N/A"
               }
             ],
+            "mappingType": 1,
+            "gauge": {
+              "show": false,
+              "minValue": 0,
+              "maxValue": 100,
+              "thresholdMarkers": true,
+              "thresholdLabels": false
+            }
+          },
+          {
+            "content": "<img src=\"http://prometheus.io/assets/prometheus_logo_grey.svg\" alt=\"Prometheus logo\" style=\"height: 40px;\">\n<span style=\"font-family: 'Open Sans', 'Helvetica Neue', Helvetica; font-size: 25px;vertical-align: text-top;color: #bbbfc2;margin-left: 10px;\">Prometheus</span>\n\n<p style=\"margin-top: 10px;\">You're using Prometheus, an open-source systems monitoring and alerting toolkit originally built at SoundCloud. For more information, check out the <a href=\"http://www.grafana.org/\">Grafana</a> and <a href=\"http://prometheus.io/\">Prometheus</a> projects.</p>",
+            "editable": true,
+            "error": false,
+            "id": 9,
+            "links": [],
+            "mode": "html",
             "span": 3,
-            "sparkline": {
-              "fillColor": "rgba(31, 118, 189, 0.18)",
-              "full": false,
-              "lineColor": "rgb(31, 120, 193)",
-              "show": true
-            },
-            "targets": [
-              {
-                "expr": "prometheus_local_storage_checkpoint_duration_seconds",
-                "intervalFactor": 2,
-                "metric": "prometheus_local_storage_checkpoint_duration_seconds",
-                "refId": "A",
-                "step": 4
-              }
-            ],
-            "thresholds": "",
-            "title": "Checkpoint duration",
-            "type": "singlestat",
-            "valueFontSize": "80%",
-            "valueMaps": [
-              {
-                "op": "=",
-                "text": "N/A",
-                "value": "null"
-              }
-            ],
-            "valueName": "avg"
+            "style": {},
+            "title": "",
+            "transparent": true,
+            "type": "text"
           }
         ],
         "title": "New row"
       },
       {
-        "collapse": true,
+        "collapse": false,
+        "editable": true,
+        "height": 227,
+        "panels": [
+          {
+            "aliasColors": {
+              "prometheus": "#C15C17",
+              "{instance=\"localhost:9090\",job=\"prometheus\"}": "#C15C17"
+            },
+            "bars": false,
+            "datasource": "{{ grafana_datasource_name }}",
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)"
+            },
+            "id": 3,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 2,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 9,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(prometheus_local_storage_ingested_samples_total[5m])",
+                "interval": "",
+                "intervalFactor": 2,
+                "legendFormat": "{{ '{{' }} job {{ '}}' }}",
+                "metric": "",
+                "refId": "A",
+                "step": 2
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Samples ingested (rate-5m)",
+            "tooltip": {
+              "shared": true,
+              "value_type": "cumulative",
+              "ordering": "alphabetical",
+              "msResolution": false
+            },
+            "type": "graph",
+            "yaxes": [
+              {
+                "show": true,
+                "min": null,
+                "max": null,
+                "logBase": 1,
+                "format": "short"
+              },
+              {
+                "show": true,
+                "min": null,
+                "max": null,
+                "logBase": 1,
+                "format": "short"
+              }
+            ],
+            "xaxis": {
+              "show": true
+            }
+          },
+          {
+            "content": "#### Samples Ingested\nThis graph displays the count of samples ingested by the Prometheus server, as measured over the last 5 minutes, per time series in the range vector. When troubleshooting an issue on IRC or Github, this is often the first stat requested by the Prometheus team. ",
+            "editable": true,
+            "error": false,
+            "id": 8,
+            "links": [],
+            "mode": "markdown",
+            "span": 2.995914043583536,
+            "style": {},
+            "title": "",
+            "transparent": true,
+            "type": "text"
+          }
+        ],
+        "title": "New row"
+      },
+      {
+        "collapse": false,
         "editable": true,
         "height": "250px",
         "panels": [
@@ -360,7 +393,7 @@
             "points": false,
             "renderer": "flot",
             "seriesOverrides": [],
-            "span": 6,
+            "span": 5,
             "stack": false,
             "steppedLine": false,
             "targets": [
@@ -376,31 +409,31 @@
             "timeShift": null,
             "title": "Target Scrapes (last 5m)",
             "tooltip": {
-              "msResolution": false,
               "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
+              "value_type": "cumulative",
+              "ordering": "alphabetical",
+              "msResolution": false
             },
             "type": "graph",
-            "xaxis": {
-              "show": true
-            },
             "yaxes": [
               {
-                "format": "short",
-                "logBase": 1,
-                "max": null,
+                "show": true,
                 "min": null,
-                "show": true
+                "max": null,
+                "logBase": 1,
+                "format": "short"
               },
               {
-                "format": "short",
-                "logBase": 1,
-                "max": null,
+                "show": true,
                 "min": null,
-                "show": true
+                "max": null,
+                "logBase": 1,
+                "format": "short"
               }
-            ]
+            ],
+            "xaxis": {
+              "show": true
+            }
           },
           {
             "aliasColors": {},
@@ -434,7 +467,7 @@
             "points": false,
             "renderer": "flot",
             "seriesOverrides": [],
-            "span": 6,
+            "span": 4,
             "stack": false,
             "steppedLine": false,
             "targets": [
@@ -452,38 +485,50 @@
             "timeShift": null,
             "title": "Scrape Duration",
             "tooltip": {
-              "msResolution": false,
               "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
+              "value_type": "cumulative",
+              "ordering": "alphabetical",
+              "msResolution": false
             },
             "type": "graph",
-            "xaxis": {
-              "show": true
-            },
             "yaxes": [
               {
-                "format": "s",
-                "logBase": 1,
-                "max": null,
+                "show": true,
                 "min": null,
-                "show": true
+                "max": null,
+                "logBase": 1,
+                "format": "short"
               },
               {
-                "format": "short",
-                "logBase": 1,
-                "max": null,
+                "show": true,
                 "min": null,
-                "show": true
+                "max": null,
+                "logBase": 1,
+                "format": "short"
               }
-            ]
+            ],
+            "xaxis": {
+              "show": true
+            }
+          },
+          {
+            "content": "#### Scrapes\nPrometheus scrapes metrics from instrumented jobs, either directly or via an intermediary push gateway for short-lived jobs. Target scrapes will show how frequently targets are scraped, as measured over the last 5 minutes, per time series in the range vector. Scrape Duration will show how long the scrapes are taking, with percentiles available as series. ",
+            "editable": true,
+            "error": false,
+            "id": 11,
+            "links": [],
+            "mode": "markdown",
+            "span": 3,
+            "style": {},
+            "title": "",
+            "transparent": true,
+            "type": "text"
           }
         ],
-        "showTitle": true,
-        "title": "Scrapes"
+        "title": "New row"
       },
       {
-        "collapse": true,
+        "collapse": false,
         "editable": true,
         "height": "250px",
         "panels": [
@@ -522,12 +567,12 @@
             "points": false,
             "renderer": "flot",
             "seriesOverrides": [],
-            "span": 12,
+            "span": 9,
             "stack": false,
             "steppedLine": false,
             "targets": [
               {
-                "expr": "prometheus_evaluator_duration_milliseconds{quantile!=\"0.01\", quantile!=\"0.05\"}",
+                "expr": "prometheus_evaluator_duration_seconds{quantile!=\"0.01\", quantile!=\"0.05\"}",
                 "interval": "",
                 "intervalFactor": 2,
                 "legendFormat": "{{ '{{' }} quantile {{ '}}' }}",
@@ -539,691 +584,45 @@
             "timeShift": null,
             "title": "Rule Eval Duration",
             "tooltip": {
-              "msResolution": false,
               "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
+              "value_type": "cumulative",
+              "ordering": "alphabetical",
+              "msResolution": false
             },
             "type": "graph",
-            "xaxis": {
-              "show": true
-            },
             "yaxes": [
               {
+                "show": true,
+                "min": null,
+                "max": null,
+                "logBase": 1,
                 "format": "percentunit",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
+                "label": ""
               },
               {
-                "format": "short",
-                "logBase": 1,
-                "max": null,
+                "show": true,
                 "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "showTitle": true,
-        "title": "Rules"
-      },
-      {
-        "collapse": false,
-        "editable": true,
-        "height": 227,
-        "panels": [
-          {
-            "aliasColors": {
-              "prometheus": "#C15C17",
-              "{instance=\"localhost:9090\",job=\"prometheus\"}": "#C15C17"
-            },
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 3,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 2,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "rate(prometheus_local_storage_ingested_samples_total[1m])",
-                "interval": "",
-                "intervalFactor": 2,
-                "legendFormat": "{{ '{{' }} job {{ '}}' }}",
-                "metric": "",
-                "refId": "A",
-                "step": 2
+                "max": null,
+                "logBase": 1,
+                "format": "short"
               }
             ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Samples ingested (rate:1m)",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
             "xaxis": {
               "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
+            }
           },
           {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
+            "content": "#### Rule Evaluation Duration\nThis graph panel plots the duration for all evaluations to execute. The 50th percentile, 90th percentile and 99th percentile are shown as three separate series to help identify outliers that may be skewing the data.",
             "editable": true,
             "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 20,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
+            "id": 15,
             "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "prometheus_local_storage_persistence_urgency_score",
-                "intervalFactor": 2,
-                "metric": "prometheus_local_storage_persistence_urgency_score",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Persistence Urgency",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "title": "New row"
-      },
-      {
-        "collapse": false,
-        "editable": true,
-        "height": "250px",
-        "panels": [
-          {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 16,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "prometheus_local_storage_rushed_mode",
-                "intervalFactor": 2,
-                "metric": "prometheus_local_storage_rushed_mode",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Rushed mode",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 19,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "prometheus_local_storage_chunks_to_persist",
-                "intervalFactor": 2,
-                "metric": "prometheus_local_storage_chunks_to_persist",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Chunks to persist",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "title": "New row"
-      },
-      {
-        "collapse": false,
-        "editable": true,
-        "height": "250px",
-        "panels": [
-          {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 21,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "hideEmpty": true,
-              "hideZero": true,
-              "max": false,
-              "min": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "rate(prometheus_local_storage_chunk_ops_total[1m])",
-                "intervalFactor": 2,
-                "legendFormat": "{{ '{{' }} type {{ '}}' }}",
-                "metric": "prometheus_local_storage_chunk_ops_total",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Chunk ops",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 22,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "hideEmpty": true,
-              "hideZero": true,
-              "max": false,
-              "min": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "rate(prometheus_local_storage_series_ops_total[1m])",
-                "intervalFactor": 2,
-                "legendFormat": "{{ '{{' }} type {{ '}}' }}",
-                "metric": "prometheus_local_storage_series_ops_total",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Series ops",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "title": "New row"
-      },
-      {
-        "collapse": false,
-        "editable": true,
-        "height": "250px",
-        "panels": [
-          {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 17,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "rate(process_cpu_seconds_total[1m])",
-                "intervalFactor": 2,
-                "legendFormat": "{{ '{{' }} job {{ '}}' }}",
-                "metric": "process_cpu_seconds_total",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "CPU",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
-            "editable": true,
-            "error": false,
-            "fill": 1,
-            "grid": {
-              "threshold1": null,
-              "threshold1Color": "rgba(216, 200, 27, 0.27)",
-              "threshold2": null,
-              "threshold2Color": "rgba(234, 112, 112, 0.22)"
-            },
-            "id": 18,
-            "isNew": true,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "process_resident_memory_bytes",
-                "intervalFactor": 2,
-                "legendFormat": "{{ '{{' }} job {{ '}}' }}",
-                "metric": "process_resident_memory_bytes",
-                "refId": "A",
-                "step": 2
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Resident memory",
-            "tooltip": {
-              "msResolution": false,
-              "shared": true,
-              "sort": 0,
-              "value_type": "cumulative"
-            },
-            "type": "graph",
-            "xaxis": {
-              "show": true
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
+            "mode": "markdown",
+            "span": 3,
+            "style": {},
+            "title": "",
+            "transparent": true,
+            "type": "text"
           }
         ],
         "title": "New row"
@@ -1265,9 +664,9 @@
     "annotations": {
       "list": []
     },
-    "refresh": "10s",
+    "refresh": false,
     "schemaVersion": 12,
-    "version": 11,
+    "version": 0,
     "links": [
       {
         "icon": "info",
@@ -1287,8 +686,8 @@
         "url": "http://prometheus.io/docs/introduction/overview/"
       }
     ],
-    "gnetId": 445,
-    "description": "VIew Prometheus internal metrics: an extension of the standard dashboard.  Useful for tuning, probably overkill for daily use."
+    "gnetId": 2,
+    "description": "The  official, pre-built Prometheus Stats Dashboard."
   },
   "overwrite": true
 }

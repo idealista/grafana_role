@@ -15,8 +15,8 @@
   tags:
     - service
 
-- name: GRAFANA | Datasource
-  include: datasource.yml
+- name: GRAFANA | Datasource And Organisation
+  include: datasourceAndOrganization.yml
   tags:
     - datasource
 
