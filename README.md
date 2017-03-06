@@ -1,8 +1,8 @@
 ![Logo](logo.gif)
 
-# Prometheus Alert Manager Ansible role
+# Prometheus Grafana Ansible role
 
-This ansible role installs an Alert Manager server in a debian environment. The server is installed using the sources.
+This ansible role installs an Grafana server in a debian environment.
 
 - [Getting Started](#getting-started)
 	- [Prerequisities](#prerequisities)
@@ -57,29 +57,6 @@ Use in a playbook:
 Look to the [defaults](defaults/main.yml) properties file to see the possible configuration properties.
 
 You can edit grafana config and dashboards via template or webui.
-
-This role is separated in two phases.
-The install cycle prepare and set up a grafana server.
-The dashboards cycle imports dashboards into the server. Two kind of dashboards can be imported:
-  - machine:
-
-    This dashboard is default and you only have to set a variable to use it. An usage example can be found [here](test/group_vars/group01.yml).
-  - custom:
-
-    You can upload a custom dashboard. Just store the template int the defined `grafana_dashboard_templates_path`
-    and include the variables under the `grafana_dashboards` variable like test.json.js in the [example](test/group_vars/group01.yml).
-
-You can use only this phase by setting the tag `dashboards` in the role.
-Notice that you must set the `grafana_host` and `grafana_port` vars.
-
-```
----
-- hosts: someserver
-  roles:
-    - role: grafana
-      tags:
-        - dashboard
-```
 
 ## Testing
 

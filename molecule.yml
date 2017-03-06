@@ -28,7 +28,6 @@ dependency:
 # ansible related configuration
 ansible:
   playbook: tests/playbook.yml
-  #tags: dashboards #test only dashboard upload
 
 # configuration options for the internal call to vagrant
 vagrant:

@@ -46,3 +46,19 @@
   when:
     - grafana_datasource_type == 'prometheus'
     - grafana_service_state == 'started'
+
+- name: GRAFANA | Set Organisation
+  uri:
+    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/orgs/1"
+    method: PUT
+    HEADER_Accept: application/json
+    HEADER_Content-Type: application/json
+    force_basic_auth: yes
+    user: "{{ grafana_admin_user }}"
+    password: "{{ grafana_admin_password }}"
+    body: "{{ lookup('template', 'templates/organisation.json.j2')}}"
+    body_format: json
+    response: 200
+  when:
+    - grafana_organisation is defined
+    - grafana_service_state == 'started'
