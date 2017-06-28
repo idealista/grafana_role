@@ -14,4 +14,4 @@ galaxy_info:
     - visualization
 
 dependencies:
-  - idealista.mysql
+  - idealista.mysql-role
