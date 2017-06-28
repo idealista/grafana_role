@@ -9,9 +9,9 @@ galaxy_info:
     - name: Debian
       versions:
         - jessie
-  categories:
+  galaxy_tags:
     - dashboard
     - visualization
 
 dependencies:
-  - mysql
+  - idealista.mysql
