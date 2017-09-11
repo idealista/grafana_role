@@ -1,5 +1,5 @@
 ---
-- src: http://bitbucket.int.sys.idealista/scm/as/mysql-role.git
+- src: https://github.com/idealista/mysql-role
   scm: git
   version: origin/master
   name: mysql
