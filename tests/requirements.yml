@@ -1,5 +1,4 @@
 ---
-- src: https://github.com/idealista/mysql-role
-  scm: git
-  version: origin/master
+- src: idealista.mysql-role
+  version: 1.2.0
   name: mysql
