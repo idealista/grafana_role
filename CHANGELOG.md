@@ -5,3 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 ## [1.0.0](https://github.com/idealista-tech/grafana-role/tree/1.0.0) (2017-02-28)
 ### Added
 - *First release*
+
+## [1.0.1] - 2017-09-11
+### Changed
+- Fix wrong mysql-role src
