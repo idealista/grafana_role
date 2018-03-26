@@ -4,8 +4,8 @@
   template:
     src: "{{ item }}.j2"
     dest: "/etc/grafana/{{ item }}"
-    owner: grafana
-    group: grafana
+    owner: "{{ grafana_user }}"
+    group: "{{ grafana_group }}"
   notify: restart grafana
   with_items:
     - ldap.toml

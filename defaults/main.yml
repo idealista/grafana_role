@@ -1,9 +1,13 @@
 ---
 ## General
+grafana_version: latest # Or: 5.0.3, 4.5.0, ...
+
+# Owner
+grafana_user: grafana
+grafana_group: grafana
 
 ## Service options
-
-grafana_app_mode: production
+grafana_app_mode: production # possible values : production, development
 
 # start on boot
 grafana_service_enabled: True
@@ -11,9 +15,9 @@ grafana_service_enabled: True
 grafana_service_state: started
 
 # Files & Paths
-grafana_data_path: "/var/lib/grafana"
+grafana_data_path: /var/lib/grafana
 grafana_plugins_path: "{{ grafana_data_path }}/plugins"
-grafana_log_path: "/var/log/grafana"
+grafana_log_path: /var/log/grafana
 grafana_dashboards_path: "{{ grafana_data_path }}/dashboards"
 
 # Port & host

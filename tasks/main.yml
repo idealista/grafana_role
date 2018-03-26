@@ -1,21 +1,21 @@
 ---
 
 - name: GRAFANA | Install
-  include: install.yml
+  import_tasks: install.yml
   tags:
     - install
 
 - name: GRAFANA | Configure
-  include: config.yml
+  import_tasks: config.yml
   tags:
     - configure
 
 - name: GRAFANA | Service
-  include: service.yml
+  import_tasks: service.yml
   tags:
     - service
 
 - name: GRAFANA | Datasource And Organisation
-  include: datasourceAndOrganization.yml
+  import_tasks: datasourceAndOrganization.yml
   tags:
     - datasource

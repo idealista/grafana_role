@@ -1,10 +1,20 @@
 ---
 
+- name: GRAFANA | Ensure grafana group
+  group:
+    name: "{{ grafana_group }}"
+
+- name: grafana | Ensure grafana user
+  user:
+    name: "{{ grafana_user }}"
+    group: "{{ grafana_group }}"
+    shell: /bin/bash
+
 - name: GRAFANA | Installing dependencies
   apt:
     pkg: "{{ item }}"
     state: present
-  with_items: "{{ required_libs }}"
+  with_items: "{{ grafana_required_libs }}"
   tags:
     skip_ansible_lint
 
@@ -18,8 +28,9 @@
 
 - name: GRAFANA | Install grafana
   apt:
-    pkg: grafana
-    state: present
+    name: "grafana{{ (grafana_version == 'latest') | ternary('', '=' + grafana_version) }}"
+    state: "{{ (grafana_version == 'latest') | ternary('latest', 'present') }}"
+    force: true
 
 - name: Links grafana dir to /
   file:
@@ -27,5 +38,5 @@
     dest: /grafana
     state: link
     force: yes
-    owner: grafana
-    group: grafana
+    owner: "{{ grafana_user }}"
+    group: "{{ grafana_group }}"

@@ -1,6 +1,7 @@
+tests/cache
 tests/playbook.retry
-tests/.cache
 tests/__pycache__
 .molecule
-.vagrant
 .cache
+.vagrant
+tests/roles
