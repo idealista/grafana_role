@@ -4,8 +4,9 @@
   uri:
     url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources/1"
     method: GET
-    HEADER_Accept: application/json
-    HEADER_Content-Type: application/json
+    headers:
+      Accept: application/json
+      Content-Type: application/json
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
@@ -19,8 +20,9 @@
   uri:
     url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources"
     method: POST
-    HEADER_Accept: application/json
-    HEADER_Content-Type: application/json
+    headers:
+      Accept: application/json
+      Content-Type: application/json
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
@@ -35,8 +37,9 @@
   uri:
     url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/dashboards/db"
     method: POST
-    HEADER_Accept: application/json
-    HEADER_Content-Type: application/json
+    headers:
+      Accept: application/json
+      Content-Type: application/json
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
@@ -51,8 +54,9 @@
   uri:
     url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/orgs/1"
     method: PUT
-    HEADER_Accept: application/json
-    HEADER_Content-Type: application/json
+    headers:
+      Accept: application/json
+      Content-Type: application/json
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"

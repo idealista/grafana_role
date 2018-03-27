@@ -9,7 +9,7 @@
 
 - name: GRAFANA | Wait for service listening
   wait_for:
-    host: "{{ inventory_hostname }}"
+    host: "{{ grafana_host }}"
     port: "{{ grafana_port }}"
     state: "{{ grafana_service_state }}"
     timeout: 30

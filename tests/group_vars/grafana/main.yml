@@ -12,6 +12,9 @@ mysql_users:
     priv:
     - grafana.*:ALL
 
+mysql_datadir: /var/lib/mysql
+
 ## GRAFANA
+grafana_version: 5.0.3
 grafana_port: 8081
 grafana_organisation: The Organisation
