@@ -28,7 +28,7 @@ molecule:
       - syntax
       - create
       - converge
-      - idempotence
+        #- idempotence
       - verify
 
 dependency:
