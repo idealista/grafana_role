@@ -1,17 +1,14 @@
 ---
-
 galaxy_info:
   company: Idealista S.A.
-  description: Grafana server
-  min_ansible_version: 2.2
+  description: Grafana server role
+  min_ansible_version: 2.4.1.0
   license: Apache 2.0
   platforms:
     - name: Debian
       versions:
         - jessie
+        - stretch
   galaxy_tags:
     - dashboard
     - visualization
-
-dependencies:
-  - idealista.mysql-role
