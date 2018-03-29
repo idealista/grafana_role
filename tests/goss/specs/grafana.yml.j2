@@ -1,0 +1,41 @@
+group:
+  {{ grafana_group }}:
+    exists: true
+
+user:
+  {{ grafana_user }}:
+    exists: true
+    groups:
+      - {{ grafana_group }}
+
+file:
+  /etc/grafana:
+    exists: true
+    filetype: directory
+  {{ grafana_data_path }}:
+    owner: {{ grafana_user }}
+    group: {{ grafana_group }}
+    exists: true
+    filetype: directory
+  {{ grafana_plugins_path }}:
+    owner: {{ grafana_user }}
+    group: {{ grafana_group }}
+    exists: true
+    filetype: directory
+  {{ grafana_log_path }}:
+    owner: {{ grafana_user }}
+    group: {{ grafana_group }}
+    exists: true
+    filetype: directory
+  /run/grafana:
+    owner: {{ grafana_user }}
+    group: {{ grafana_group }}
+    exists: true
+    filetype: directory
+  /usr/lib/systemd/system/grafana-server.service:
+    exists: true
+
+service:
+  grafana-server:
+    enabled: true
+    running: true
