@@ -21,6 +21,7 @@
 - name: GRAFANA | Debian repo key on package cloud
   apt_key:
     url: "{{ grafana_key }}"
+    state: present
 
 - name: GRAFANA | Debian grafana repo
   apt_repository:

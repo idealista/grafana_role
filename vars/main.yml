@@ -2,5 +2,5 @@
 grafana_required_libs:
   - apt-transport-https
 
-grafana_repo: "deb https://packagecloud.io/grafana/stable/debian/ {{ ansible_distribution_release }} main"
-grafana_key: "https://packagecloud.io/gpg.key"
+grafana_repo: "deb https://packages.grafana.com/oss/deb stable main"
+grafana_key: "https://packages.grafana.com/gpg.key"

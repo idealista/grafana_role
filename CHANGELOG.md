@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased]
+### Fixed
+- *Set Grafana GPG key state to present else the Grafana can't be found when installing* @edwinkortman
 
 ## [1.2.0] - 2018-03-29
 ## [Full Changelog](https://github.com/idealista/grafana-role/compare/1.1.0...1.2.0)
