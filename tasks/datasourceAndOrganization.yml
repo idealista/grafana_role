@@ -32,6 +32,10 @@
   when:
     - datasource_check.status != 200
     - grafana_service_state in ['started', 'restarted', 'reloaded']
+  register: importDatasource
+  retries: 10
+  delay: 1
+  until: ( importDatasource.status == 200)
 
 - name: GRAFANA | Import stats dashboard
   uri:
