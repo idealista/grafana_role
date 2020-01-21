@@ -1,0 +1,15 @@
+# Molecule managed
+
+{% if item.registry is defined %}
+FROM {{ item.registry.url }}/{{ item.image }}
+{% else %}
+FROM {{ item.image }}
+{% endif %}
+
+RUN mkdir -p /usr/share/man/man1
+
+RUN apt-get update && \
+    apt-get install -y iproute2 sudo systemd systemd-sysv python python-setuptools ssh cron locales ca-certificates && \
+    apt-get clean
+
+RUN systemctl mask getty.target

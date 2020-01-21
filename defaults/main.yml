@@ -1,13 +1,13 @@
 ---
 ## General
-grafana_version: latest # Or: 5.0.3, 4.5.0, ...
+grafana_version: latest  # Or: 5.0.3, 4.5.0, ...
 
 # Owner
 grafana_user: grafana
 grafana_group: grafana
 
 ## Service options
-grafana_app_mode: production # possible values : production, development
+grafana_app_mode: production  # possible values : production, development
 
 # start on boot
 grafana_service_enabled: True
@@ -55,13 +55,13 @@ grafana_log_mode: console file
 grafana_log_level: info
 
 ## ORGANISATION
-#grafana_organisation:
+# grafana_organisation:
 
 ## DATASOURCE
 grafana_datasource_name: Prometheus
 grafana_datasource_type: prometheus
 grafana_datasource_url_protocol: http
-grafana_datasource_url: localhost:9090 #No protocol
+grafana_datasource_url: localhost:9090  # No protocol
 grafana_datasource_basicauth: 'false'
 grafana_datasource_basicauth_user:
 grafana_datasource_basicauth_password:

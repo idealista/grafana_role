@@ -1,6 +1,6 @@
-![Logo](https://raw.githubusercontent.com/idealista/grafana-role/master/logo.gif)
+![Logo](https://raw.githubusercontent.com/idealista/grafana_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/grafana-role.png)](https://travis-ci.org/idealista/grafana-role)
+[![Build Status](https://travis-ci.org/idealista/grafana_role.png)](https://travis-ci.org/idealista/grafana_role)
 
 # Prometheus Grafana Ansible role
 
@@ -23,26 +23,26 @@ These instructions will get you a copy of the role for your ansible playbook. On
 
 ### Prerequisities
 
-Ansible 2.4.3.0 version installed.
+Ansible 2.8.x.x version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Vagrant](https://www.vagrantup.com/) as driver (with [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager) plugin) and [VirtualBox](https://www.virtualbox.org/) as provider.
+For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/) as driver. Pipenv 2018.11.26 and Python 3 recommended.
 
 ### Installing
 
 Create or add to your roles dependency file (e.g requirements.yml) from GitHub:
 
 ```
-- src: http://github.com/idealista/grafana-role.git
+- src: http://github.com/idealista/grafana_role.git
   scm: git
-  version: 1.0.0
+  version: 1.3.0
   name: grafana
 ```
 
-or using [Ansible Galaxy](https://galaxy.ansible.com/idealista/grafana-role/) as origin if you prefer:
+or using [Ansible Galaxy](https://galaxy.ansible.com/idealista/grafana_role/) as origin if you prefer:
 
 ```
-- src: idealista.grafana-role
+- src: idealista.grafana_role
 ```
 
 Install the role with ansible-galaxy command:
@@ -69,16 +69,18 @@ You can edit grafana config and dashboards via template or webui.
 ## Testing
 
 ```
-molecule test --platform=Debian9
+pipenv shell
+pipenv sync
+molecule test
 ```
 
 ## Built With
 
-![Ansible](https://img.shields.io/badge/ansible-2.4.3.0-green.svg)
+![Ansible](https://img.shields.io/badge/ansible-2.8.0.0-green.svg)
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/idealista/grafana-role/tags).
+For the versions available, see the [tags on this repository](https://github.com/idealista/grafana_role/tags).
 
 Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGELOG.md) file.
 

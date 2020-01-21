@@ -10,4 +10,4 @@
         - net-tools
   roles:
     - mysql
-    - grafana-role
+    - grafana_role

@@ -1,0 +1,4 @@
+---
+- src: idealista.mysql_role
+  version: 3.0.0
+  name: mysql
