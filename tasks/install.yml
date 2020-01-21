@@ -39,5 +39,3 @@
     dest: /grafana
     state: link
     force: yes
-    owner: "{{ grafana_user }}"
-    group: "{{ grafana_group }}"

@@ -10,7 +10,7 @@ mysql_users:
   - name: 'grafana'
     password: 'grafana'
     priv:
-    - grafana.*:ALL
+      - grafana.*:ALL
 
 mysql_datadir: /var/lib/mysql
 
@@ -18,3 +18,11 @@ mysql_datadir: /var/lib/mysql
 grafana_version: 5.0.3
 grafana_port: 8081
 grafana_organisation: The Organisation
+
+grafana_user: grafana
+grafana_group: grafana
+
+grafana_data_path: /var/lib/grafana
+
+grafana_plugins_path: "{{ grafana_data_path }}/plugins"
+grafana_log_path: /var/log/grafana
