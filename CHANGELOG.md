@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased]
 
+## [1.3.1](https://github.com/idealista/grafana_role/tree/1.3.1)
+## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.3.0...1.3.1)
+### Fixed
+- *Removed old molecule file* @frantsao
+
 ## [1.3.0](https://github.com/idealista/grafana_role/tree/1.3.0)
 ## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.2.1...1.3.0)
 ### Added
