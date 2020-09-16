@@ -28,7 +28,7 @@
     password: "{{ grafana_admin_password }}"
     body: "{{ lookup('template', 'templates/datasource.json.j2')}}"
     body_format: json
-    response: 200
+    status_code: 200
   when:
     - datasource_check.status != 200
     - grafana_service_state in ['started', 'restarted', 'reloaded']
@@ -49,7 +49,7 @@
     password: "{{ grafana_admin_password }}"
     body: "{{ lookup('template', 'templates/dashboards/prometheus_stats.json.j2')}}"
     body_format: json
-    response: 200
+    status_code: 200
   when:
     - grafana_datasource_type == 'prometheus'
     - grafana_service_state == 'started'
@@ -66,7 +66,7 @@
     password: "{{ grafana_admin_password }}"
     body: "{{ lookup('template', 'templates/organisation.json.j2')}}"
     body_format: json
-    response: 200
+    status_code: 200
   when:
     - grafana_organisation is defined
     - grafana_service_state == 'started'
