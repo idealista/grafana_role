@@ -26,3 +26,21 @@ grafana_data_path: /var/lib/grafana
 
 grafana_plugins_path: "{{ grafana_data_path }}/plugins"
 grafana_log_path: /var/log/grafana
+
+grafana_datasources:
+  - name: Prometheus1
+    type: prometheus
+    url_protocol: http
+    url: localhost:9090  # No protocol
+    basicauth: 'false'
+    basicauth_user:
+    basicauth_password:
+    default: 'true'
+  - name: Prometheus2
+    type: prometheus
+    url_protocol: http
+    url: localhost:9090  # No protocol
+    basicauth: 'false'
+    basicauth_user:
+    basicauth_password:
+    default: 'true'
