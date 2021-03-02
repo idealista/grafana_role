@@ -9,6 +9,7 @@
     "hideControls": true,
     "sharedCrosshair": false,
     "rows": [
+    {% for item in grafana_datasources if item.type == 'prometheus' %}
       {
         "collapse": false,
         "editable": true,
@@ -23,7 +24,7 @@
               "rgba(237, 129, 40, 0.89)",
               "rgba(50, 172, 45, 0.97)"
             ],
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "decimals": 1,
             "editable": true,
             "error": false,
@@ -100,7 +101,7 @@
               "rgba(237, 129, 40, 0.89)",
               "rgba(245, 54, 54, 0.9)"
             ],
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "editable": true,
             "error": false,
             "format": "none",
@@ -170,7 +171,7 @@
               "rgba(237, 129, 40, 0.89)",
               "rgba(245, 54, 54, 0.9)"
             ],
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "editable": true,
             "error": false,
             "format": "none",
@@ -261,10 +262,10 @@
           {
             "aliasColors": {
               "prometheus": "#C15C17",
-              "{instance=\"localhost:9090\",job=\"prometheus_statistics\"}": "#C15C17"
+              "{instance=\"{{ item.url }}\",job=\"prometheus_statistics\"}": "#C15C17"
             },
             "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "editable": true,
             "error": false,
             "fill": 1,
@@ -361,10 +362,10 @@
           {
             "aliasColors": {
               "prometheus": "#F9BA8F",
-              "{instance=\"localhost:9090\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
+              "{instance=\"{{ item.url }}\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
             },
             "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "editable": true,
             "error": false,
             "fill": 1,
@@ -438,7 +439,7 @@
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "editable": true,
             "error": false,
             "fill": 1,
@@ -535,7 +536,7 @@
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "{{ grafana_datasource_name }}",
+            "datasource": "{{ item.name }}",
             "decimals": null,
             "editable": true,
             "error": false,
@@ -627,6 +628,8 @@
         ],
         "title": "New row"
       }
+      {% if loop.index != loop.length %},{% endif %}
+    {% endfor %}
     ],
     "time": {
       "from": "now-5m",
