@@ -58,12 +58,22 @@ grafana_log_level: info
 # grafana_organisation:
 
 ## DATASOURCE
+grafana_datasource_name: Prometheus
+grafana_datasource_type: prometheus
+grafana_datasource_url_protocol: http
+grafana_datasource_url: localhost:9090  # No protocol
+grafana_datasource_basicauth: 'false'
+grafana_datasource_basicauth_user:
+grafana_datasource_basicauth_password:
+grafana_datasource_default: 'true'
+
+# To add more datasources override this array to add as many datasources as you need
 grafana_datasources:
-  - name: Prometheus
-    type: prometheus
-    url_protocol: http
-    url: localhost:9090  # No protocol
-    basicauth: 'false'
-    basicauth_user:
-    basicauth_password:
-    default: 'true'
+  - name: "{{ grafana_datasource_name }}"
+    type: "{{ grafana_datasource_type }}"
+    url_protocol: "{{ grafana_datasource_url_protocol }}"
+    url: "{{ grafana_datasource_url }}"
+    basicauth: "{{ grafana_datasource_basicauth }}"
+    basicauth_user: "{{ grafana_datasource_basicauth_user }}"
+    basicauth_password: "{{ grafana_datasource_basicauth_password }}"
+    default: "{{ grafana_datasource_default }}"
