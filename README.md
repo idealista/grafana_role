@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/idealista/grafana_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/grafana_role.png)](https://travis-ci.org/idealista/grafana_role)
+[![Build Status](https://travis-ci.com/idealista/grafana_role.png)](https://travis-ci.com/idealista/grafana_role)
 
 # Prometheus Grafana Ansible role
 

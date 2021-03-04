@@ -1,8 +1,8 @@
 ---
 
-- name: GRAFANA | Check main datasource
+- name: GRAFANA | Get datasources
   uri:
-    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources/1"
+    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources"
     method: GET
     headers:
       Accept: application/json
@@ -10,13 +10,30 @@
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
-    body: "{{ lookup('template', 'templates/datasource.json.j2')}}"
-    body_format: json
   register: datasource_check
   failed_when: false
   when: grafana_service_state in ['started', 'restarted', 'reloaded']
 
-- name: GRAFANA | Import datasource
+- name: GRAFANA | Delete datasources
+  uri:
+    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources/{{ item.id }}"
+    method: DELETE
+    headers:
+      Accept: application/json
+      Content-Type: application/json
+    force_basic_auth: yes
+    user: "{{ grafana_admin_user }}"
+    password: "{{ grafana_admin_password }}"
+    status_code: 200
+  with_items: "{{ datasource_check.json }}"
+  when:
+    - grafana_service_state in ['started', 'restarted', 'reloaded']
+  register: deleteDatasource
+  retries: 10
+  delay: 1
+  until: ( deleteDatasource.status == 200)
+
+- name: GRAFANA | Add datasources
   uri:
     url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/datasources"
     method: POST
@@ -26,11 +43,11 @@
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
-    body: "{{ lookup('template', 'templates/datasource.json.j2')}}"
+    body: "{{ item }}"
     body_format: json
     status_code: 200
+  with_items: "{{ lookup('template', 'templates/datasource.json.j2') }}"
   when:
-    - datasource_check.status != 200
     - grafana_service_state in ['started', 'restarted', 'reloaded']
   register: importDatasource
   retries: 10
@@ -47,11 +64,10 @@
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
-    body: "{{ lookup('template', 'templates/dashboards/prometheus_stats.json.j2')}}"
+    body: "{{ lookup('template', 'templates/dashboards/prometheus_stats.json.j2') }}"
     body_format: json
     status_code: 200
   when:
-    - grafana_datasource_type == 'prometheus'
     - grafana_service_state == 'started'
 
 - name: GRAFANA | Set Organisation
