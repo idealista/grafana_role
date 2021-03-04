@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/idealista/grafana_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/grafana_role.png)](https://travis-ci.org/idealista/grafana_role)
+[![Build Status](https://travis-ci.com/idealista/grafana_role.png)](https://travis-ci.com/idealista/grafana_role)
 
 # Prometheus Grafana Ansible role
 
@@ -35,7 +35,7 @@ Create or add to your roles dependency file (e.g requirements.yml) from GitHub:
 ```
 - src: http://github.com/idealista/grafana_role.git
   scm: git
-  version: 1.3.0
+  version: 1.4.0
   name: grafana
 ```
 

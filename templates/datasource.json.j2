@@ -1,11 +1,15 @@
-{
-  "id": 1,
-  "name": "{{ grafana_datasource_name }}",
-  "type": "{{ grafana_datasource_type }}",
-  "url": "{{ grafana_datasource_url_protocol }}://{{ grafana_datasource_url }}",
-  "access": "proxy",
-  "basicAuth": {{ grafana_datasource_basicauth }},
-  "basicAuthUser": "{{ grafana_datasource_basicauth_user }}",
-  "basicAuthPassword": "{{ grafana_datasource_basicauth_password }}",
-  "isDefault": {{ grafana_datasource_default }}
-}
+[
+{% for item in grafana_datasources %}
+  {
+    "id": {{ loop.index }},
+    "name": "{{ item.name }}",
+    "type": "{{ item.type }}",
+    "url": "{{ item.url_protocol }}://{{ item.url }}",
+    "access": "proxy",
+    "basicAuth": {{ item.basicauth }},
+    "basicAuthUser": "{{ item.basicauth_user }}",
+    "basicAuthPassword": "{{ item.basicauth_password }}",
+    "isDefault": {{ item.default }}
+  }{% if loop.index != loop.length %},{% endif %}
+{% endfor %}
+]

@@ -66,3 +66,14 @@ grafana_datasource_basicauth: 'false'
 grafana_datasource_basicauth_user:
 grafana_datasource_basicauth_password:
 grafana_datasource_default: 'true'
+
+# To add more datasources override this array to add as many datasources as you need
+grafana_datasources:
+  - name: "{{ grafana_datasource_name }}"
+    type: "{{ grafana_datasource_type }}"
+    url_protocol: "{{ grafana_datasource_url_protocol }}"
+    url: "{{ grafana_datasource_url }}"
+    basicauth: "{{ grafana_datasource_basicauth }}"
+    basicauth_user: "{{ grafana_datasource_basicauth_user }}"
+    basicauth_password: "{{ grafana_datasource_basicauth_password }}"
+    default: "{{ grafana_datasource_default }}"
