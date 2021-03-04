@@ -35,7 +35,7 @@ Create or add to your roles dependency file (e.g requirements.yml) from GitHub:
 ```
 - src: http://github.com/idealista/grafana_role.git
   scm: git
-  version: 1.3.0
+  version: 1.4.0
   name: grafana
 ```
 
