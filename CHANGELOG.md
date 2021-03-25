@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/grafana-role/tree/develop)
 
+## [1.5.0](https://github.com/idealista/grafana_role/tree/1.5.0) (2021-03-25)
+## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.4.0...1.5.0)
+### Added
+- *[#29](https://github.com/idealista/grafana_role/issues/29) Support serving Grafana behind reverse proxy* @blalop
+
 ## [1.4.0](https://github.com/idealista/grafana_role/tree/1.4.0) (2021-03-04)
 ## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.3.2...1.4.0)
 ### Added
