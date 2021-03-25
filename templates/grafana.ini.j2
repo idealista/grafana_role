@@ -39,7 +39,10 @@ domain = {{ ansible_domain }}
 enforce_domain = false
 
 # The full public facing url
-root_url = %(protocol)s://%(domain)s:%(http_port)s/
+root_url = %(protocol)s://%(domain)s:%(http_port)s/{{ grafana_sub_path }}
+
+# Serve from subpath
+serve_from_sub_path = {{ grafana_serve_from_sub_path }}
 
 # Log web requests
 router_logging = false

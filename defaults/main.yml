@@ -24,6 +24,8 @@ grafana_dashboards_path: "{{ grafana_data_path }}/dashboards"
 grafana_host: "{{ ansible_nodename }}"
 grafana_port: 8080
 grafana_domain: "{{ ansible_domain }}"
+grafana_serve_from_sub_path: false
+grafana_sub_path: ''
 
 ## DATABASE
 grafana_database_type: mysql
