@@ -18,6 +18,15 @@
   tags:
     skip_ansible_lint
 
+- name: GRAFANA | Ensure skeleton paths
+  file:
+    dest: "{{ item }}"
+    owner: "{{ grafana_user }}"
+    group: "{{ grafana_user }}"
+    state: directory
+  with_items:
+    - "{{ grafana_skeleton_paths }}"
+
 - name: GRAFANA | Debian repo key on package cloud
   apt_key:
     url: "{{ grafana_key }}"

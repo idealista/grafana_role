@@ -338,3 +338,11 @@ secret_key =
 url =
 username =
 password =
+
+#################################### Plugins ###########################
+[plugins]
+enable_alpha = {{ grafana_plugins_enable_alpha }}
+allow_loading_unsigned_plugins = {{ grafana_plugins_allow_loading_unsigned_plugins }}
+plugin_admin_enabled = {{ grafana_plugins_admin_enabled }}
+plugin_admin_external_manage_enabled = {{ grafana_plugins_admin_external_manage_enabled }}
+plugin_catalog_url = {{ grafana_plugins_plugin_catalog }}

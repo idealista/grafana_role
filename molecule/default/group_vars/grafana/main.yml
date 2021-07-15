@@ -26,3 +26,11 @@ grafana_data_path: /var/lib/grafana
 
 grafana_plugins_path: "{{ grafana_data_path }}/plugins"
 grafana_log_path: /var/log/grafana
+
+
+grafana_plugins:
+  - name: camptocamp-prometheus-alertmanager-datasource
+    version: 0.0.8
+    state: present
+
+grafana_plugins_allow_loading_unsigned_plugins: 'camptocamp-prometheus-alertmanager-datasource'
