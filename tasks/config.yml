@@ -1,5 +1,9 @@
 ---
 
+- name: GRAFANA | Config plugins
+  include_tasks: config-plugin.yml
+  with_items: "{{ grafana_plugins }}"
+
 - name: GRAFANA | Copy configuration
   template:
     src: "{{ item }}.j2"

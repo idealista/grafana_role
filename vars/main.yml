@@ -1,6 +1,7 @@
 ---
 grafana_required_libs:
   - apt-transport-https
+  - unzip
 
 grafana_repo: "deb https://packages.grafana.com/oss/deb stable main"
 grafana_key: "https://packages.grafana.com/gpg.key"

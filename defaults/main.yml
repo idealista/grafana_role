@@ -19,6 +19,11 @@ grafana_data_path: /var/lib/grafana
 grafana_plugins_path: "{{ grafana_data_path }}/plugins"
 grafana_log_path: /var/log/grafana
 grafana_dashboards_path: "{{ grafana_data_path }}/dashboards"
+grafana_skeleton_paths:
+  - "{{ grafana_data_path }}"
+  - "{{ grafana_plugins_path }}"
+  - "{{ grafana_log_path }}"
+  - "{{ grafana_dashboards_path }}"
 
 # Port & host
 grafana_host: "{{ ansible_nodename }}"
@@ -51,6 +56,18 @@ grafana_ldap_dn: uid=admin,ou=system
 grafana_ldap_password: secret
 grafana_ldap_base_dn: ou=basicauth,ou=users,ou=axis,o=abc,c=au
 grafana_ldap_filter: (uid={0})
+
+# PLUGINS
+grafana_plugins: []
+grafana_plugins_repo: "https://grafana.com/api/plugins"
+# - name: camptocamp-prometheus-alertmanager-datasource
+#   version: 0.0.1
+#   state: present
+grafana_plugins_enable_alpha: 'false'
+grafana_plugins_allow_loading_unsigned_plugins: ''
+grafana_plugins_admin_enabled: 'false'
+grafana_plugins_admin_external_manage_enabled: 'false'
+grafana_plugins_plugin_catalog: ''
 
 ## LOG
 grafana_log_mode: console file

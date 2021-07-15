@@ -1,0 +1,14 @@
+---
+- name: GRAFANA | Download {{ item.name }}-{{ item.version }} plugin
+  get_url:
+    url: "{{ grafana_plugins_repo }}/{{ item.name }}/versions/{{ item.version }}/download"
+    dest: "{{ grafana_plugins_path }}"
+  register: grafana_downloaded_plugin
+
+- name: Grafana | Extract {{ item.name }}-{{ item.version }} plugin
+  unarchive:
+    src: "{{ grafana_downloaded_plugin.dest }}"
+    dest: "{{ grafana_plugins_path }}"
+    remote_src: True
+  when: grafana_downloaded_plugin.changed
+  notify: restart grafana
