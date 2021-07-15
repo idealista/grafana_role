@@ -22,8 +22,6 @@ platforms:
       - /run/lock
     command: '/lib/systemd/systemd'
     stop_signal: 'RTMIN+3'
-    published_ports:
-      - 0.0.0.0:8081:8081/tcp
 provisioner:
   name: ansible
   lint:
