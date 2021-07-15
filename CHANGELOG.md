@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased](https://github.com/idealista/grafana-role/tree/develop)
+
+
+## [1.6.0](https://github.com/idealista/grafana_role/tree/1.5.0) (2021-07-15)
+## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.5.0...1.6.0)
+### Added
 - *[#36](https://github.com/idealista/grafana_role/issues/36) Support plugins installation and configuration* @vsuarez
 
 ## [1.5.0](https://github.com/idealista/grafana_role/tree/1.5.0) (2021-03-25)
