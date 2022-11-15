@@ -1,0 +1,13 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: MySQL | Avoid pgp check on repos because Debian Stretch EOL
+    copy:
+      src: 99no-check-valid-until
+      dest: /etc/apt/apt.conf.d/99no-check-valid-until
+      mode: 0755
+      owner: root
+      group: root
+    when: ansible_distribution_version == "9"

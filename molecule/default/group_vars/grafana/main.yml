@@ -14,8 +14,18 @@ mysql_users:
 
 mysql_datadir: /var/lib/mysql
 
+mysql_required_libs:
+  - python3-mysqldb
+  - python-pymysql
+
+mysql_server_version: mysql-5.7
+mysql_share_dir: /usr/share/mysql
+mysql_protect_system: false
+mysql_protect_home: false
+mysql_private_devices: false
+
 ## GRAFANA
-grafana_version: 5.0.3
+grafana_version: 9.2.4
 grafana_port: 8081
 grafana_organisation: The Organisation
 
@@ -34,3 +44,16 @@ grafana_plugins:
     state: present
 
 grafana_plugins_allow_loading_unsigned_plugins: 'camptocamp-prometheus-alertmanager-datasource'
+
+grafana_service_template_path: grafana-server.service.j2
+
+grafana_system_call_filter:
+  - "~@privileged"
+  - "~@resources"
+
+grafana_private_tmp: false
+grafana_private_devices: false
+grafana_protect_home: false
+grafana_protect_system: false
+grafana_private_users: false
+grafana_private_control_groups: false

@@ -1,4 +1,4 @@
 ---
 - src: idealista.mysql_role
-  version: 4.1.1
+  version: 4.5.1
   name: mysql
