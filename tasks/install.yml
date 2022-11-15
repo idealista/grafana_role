@@ -48,3 +48,11 @@
     dest: /grafana
     state: link
     force: yes
+
+- name: GRAFANA | Copy Daemon script
+  template:
+    src: "{{ grafana_service_template_path }}"
+    dest: /usr/lib/systemd/system/grafana-server.service
+    mode: 0644
+  notify: restart grafana
+  when: grafana_service_template_path is defined
