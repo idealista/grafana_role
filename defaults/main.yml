@@ -96,3 +96,5 @@ grafana_datasources:
     basicauth_user: "{{ grafana_datasource_basicauth_user }}"
     basicauth_password: "{{ grafana_datasource_basicauth_password }}"
     default: "{{ grafana_datasource_default }}"
+    jsondata: {}
+    secureJsonData: {}

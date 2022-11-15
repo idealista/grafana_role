@@ -9,7 +9,9 @@
     "basicAuth": {{ item.basicauth }},
     "basicAuthUser": "{{ item.basicauth_user }}",
     "basicAuthPassword": "{{ item.basicauth_password }}",
-    "isDefault": {{ item.default }}
+    "isDefault": {{ item.default }},
+    "jsonData": {{ item.jsondata }},
+    "secureJsonData": {{ item.secureJsonData }}
   }{% if loop.index != loop.length %},{% endif %}
 {% endfor %}
 ]
