@@ -4,6 +4,19 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/grafana-role/tree/develop)
 
+## [2.0.0](https://github.com/idealista/grafana_role/tree/2.0.0) (2022-11-16)
+## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.6.0...2.0.0)
+### Added
+- *[#39](https://github.com/idealista/grafana_role/issues/39) Datasource template path variable* @santi-eidu
+- *[#39](https://github.com/idealista/grafana_role/issues/39) New jsondata and securejsondata variables to datasources* @santi-eidu
+- *[#39](https://github.com/idealista/grafana_role/issues/39) New grafana service template to test with molecule* @santi-eidu
+### Changed
+- *Update to ansible 2.9 to avoid errors and update lint* @santi-eidu
+### Fixed
+- *Fix travis.yml and update config* @santi-eidu
+- *Fix mysql with obsolete repos for Debian Stretch* @santi-eidu
+
+
 
 ## [1.6.0](https://github.com/idealista/grafana_role/tree/1.5.0) (2021-07-15)
 ## [Full Changelog](https://github.com/idealista/grafana_role/compare/1.5.0...1.6.0)
