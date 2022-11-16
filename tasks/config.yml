@@ -10,6 +10,7 @@
     dest: "/etc/grafana/{{ item }}"
     owner: "{{ grafana_user }}"
     group: "{{ grafana_group }}"
+    mode: '0644'
   notify: restart grafana
   with_items:
     - ldap.toml

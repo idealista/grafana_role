@@ -1,6 +1,8 @@
 ---
 galaxy_info:
-  company: Idealista S.A.
+  role_name: grafana_role
+  author: idealista
+  company: Idealista S.A.U.
   description: Grafana server role
   min_ansible_version: 2.4.1.0
   license: Apache 2.0
