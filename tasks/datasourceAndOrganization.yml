@@ -46,7 +46,7 @@
     body: "{{ item }}"
     body_format: json
     status_code: 200
-  with_items: "{{ lookup('template', 'templates/datasource.json.j2') }}"
+  with_items: "{{ lookup('template', grafana_datasource_template_path) }}"
   when:
     - grafana_service_state in ['started', 'restarted', 'reloaded']
   register: import_datasource

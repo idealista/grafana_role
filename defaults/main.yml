@@ -24,6 +24,7 @@ grafana_skeleton_paths:
   - "{{ grafana_plugins_path }}"
   - "{{ grafana_log_path }}"
   - "{{ grafana_dashboards_path }}"
+grafana_datasource_template_path: templates/datasource.json.j2
 
 # Port & host
 grafana_host: "{{ ansible_nodename }}"
