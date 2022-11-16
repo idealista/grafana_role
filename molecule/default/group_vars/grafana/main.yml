@@ -25,7 +25,7 @@ mysql_protect_home: false
 mysql_private_devices: false
 
 ## GRAFANA
-grafana_version: 9.2.4
+grafana_version: 8.2.0
 grafana_port: 8081
 grafana_organisation: The Organisation
 

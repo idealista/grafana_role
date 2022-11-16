@@ -28,10 +28,10 @@
   with_items: "{{ datasource_check.json }}"
   when:
     - grafana_service_state in ['started', 'restarted', 'reloaded']
-  register: deleteDatasource
+  register: delete_datasource
   retries: 10
   delay: 1
-  until: ( deleteDatasource.status == 200)
+  until: ( delete_datasource.status == 200)
 
 - name: GRAFANA | Add datasources
   uri:
@@ -49,10 +49,10 @@
   with_items: "{{ lookup('template', 'templates/datasource.json.j2') }}"
   when:
     - grafana_service_state in ['started', 'restarted', 'reloaded']
-  register: importDatasource
+  register: import_datasource
   retries: 10
   delay: 1
-  until: ( importDatasource.status == 200)
+  until: ( import_datasource.status == 200)
 
 - name: GRAFANA | Import stats dashboard
   uri:
@@ -80,7 +80,7 @@
     force_basic_auth: yes
     user: "{{ grafana_admin_user }}"
     password: "{{ grafana_admin_password }}"
-    body: "{{ lookup('template', 'templates/organisation.json.j2')}}"
+    body: "{{ lookup('template', 'templates/organisation.json.j2') }}"
     body_format: json
     status_code: 200
   when:
