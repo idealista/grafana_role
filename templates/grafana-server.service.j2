@@ -1,51 +1,25 @@
+{{ ansible_managed | comment }}
 [Unit]
 Description=Grafana instance
-Documentation=http://docs.grafana.org
+Documentation={{ grafana_documentation_link }}
 Wants=network-online.target
 After=network-online.target
 After=postgresql.service mariadb.service mysql.service
 
 [Service]
 EnvironmentFile=/etc/default/grafana-server
+PrivateTmp={{ grafana_private_tmp }}
 User={{ grafana_user }}
 Group={{ grafana_group }}
-Type=simple
-Restart=on-failure
-WorkingDirectory=/usr/share/grafana
+WorkingDirectory={{ grafana_working_directory }}
 RuntimeDirectory=grafana
-RuntimeDirectoryMode=0750
-ExecStart=/usr/sbin/grafana-server                                                  \
-                            --config=${CONF_FILE}                                   \
-                            --pidfile=${PID_FILE_DIR}/grafana-server.pid            \
-                            --packaging=deb                                         \
-                            cfg:default.paths.logs=${LOG_DIR}                       \
-                            cfg:default.paths.data=${DATA_DIR}                      \
-                            cfg:default.paths.plugins=${PLUGINS_DIR}                \
-                            cfg:default.paths.provisioning=${PROVISIONING_CFG_DIR}  
+LimitNOFILE={{ grafana_max_files }}
+LimitNPROC={{ grafana_max_files }}
+LimitCORE={{ grafana_max_files }}
+ExecStart={{ grafana_bin_path }}/{{ grafana_exec_name }} {% for option in grafana_options %}{% if option %}{{ option }} {% endif %}{% endfor %}
 
-
-LimitNOFILE=10000
-TimeoutStopSec=20
-CapabilityBoundingSet=
-DeviceAllow=
-LockPersonality=true
-MemoryDenyWriteExecute=true
-NoNewPrivileges=true
-PrivateDevices={{ grafana_private_devices }}
-PrivateTmp={{ grafana_private_tmp }}
-PrivateUsers={{ grafana_private_users }}
-ProtectControlGroups={{ grafana_private_control_groups }}
-ProtectHome={{ grafana_protect_home }}
-ProtectSystem={{ grafana_protect_system }}
-RemoveIPC=true
-RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
-RestrictNamespaces=true
-RestrictRealtime=true
-SystemCallArchitectures=native
-{% for item in grafana_system_call_filter %}
-SystemCallFilter={{ item }}
-{% endfor %}
-UMask=0027
-
-[Install]
-WantedBy=multi-user.target
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+Restart=on-failure
+TimeoutStartSec=0
+KillMode=process

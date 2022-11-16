@@ -47,13 +47,17 @@ grafana_plugins_allow_loading_unsigned_plugins: 'camptocamp-prometheus-alertmana
 
 grafana_service_template_path: grafana-server.service.j2
 
-grafana_system_call_filter:
-  - "~@privileged"
-  - "~@resources"
-
+grafana_documentation_link: "http://docs.grafana.org"
+grafana_max_files: 10000
+grafana_exec_name: grafana-server
+grafana_bin_path: /usr/sbin
+grafana_options:
+  - --config=${CONF_FILE}
+  - --pidfile=${PID_FILE_DIR}/grafana-server.pid
+  - --packaging=deb
+  - cfg:default.paths.logs=${LOG_DIR}
+  - cfg:default.paths.data=${DATA_DIR}
+  - cfg:default.paths.plugins=${PLUGINS_DIR}
+  - cfg:default.paths.provisioning=${PROVISIONING_CFG_DIR}
+grafana_working_directory: /usr/share/grafana
 grafana_private_tmp: false
-grafana_private_devices: false
-grafana_protect_home: false
-grafana_protect_system: false
-grafana_private_users: false
-grafana_private_control_groups: false
