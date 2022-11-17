@@ -1,4 +1,4 @@
 ---
-- src: idealista.mysql_role
-  version: 4.1.1
-  name: mysql
+- src: https://github.com/idealista/mysql_role.git
+  version: 4.5.1
+  name: mysql_role

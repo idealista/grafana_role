@@ -3,10 +3,9 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
-  options:
-    config-file: .yamllint
+lint: |
+  yamllint .
+  ansible-lint .
 platforms:
   - name: grafana
     groups:
@@ -29,7 +28,4 @@ provisioner:
 scenario:
   name: default
 verifier:
-  name: goss
-  lint:
-    name: yamllint
-    enabled: false
+  name: ansible

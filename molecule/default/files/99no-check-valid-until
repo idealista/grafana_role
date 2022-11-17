@@ -1,0 +1,4 @@
+Acquire::Check-Valid-Until false;
+Acquire::AllowInsecureRepositories true;
+Acquire::AllowDowngradeToInsecureRepositories true;
+APT::Get::AllowUnauthenticated true;
