@@ -23,5 +23,5 @@
       Accept: application/json
   register: result
   until: result.status == 200
-  retries: "{{ grafana_service_timeout }}"
+  retries: "{{ grafana_api_retries }}"
   delay: 1

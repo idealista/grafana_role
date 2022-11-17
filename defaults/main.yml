@@ -9,6 +9,7 @@ grafana_group: grafana
 ## Service options
 grafana_app_mode: production  # possible values : production, development
 grafana_service_timeout: 60
+grafana_api_retries: 60
 
 # start on boot
 grafana_service_enabled: True
