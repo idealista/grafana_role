@@ -8,6 +8,7 @@ grafana_group: grafana
 
 ## Service options
 grafana_app_mode: production  # possible values : production, development
+grafana_service_timeout: 60
 
 # start on boot
 grafana_service_enabled: True
@@ -24,6 +25,7 @@ grafana_skeleton_paths:
   - "{{ grafana_plugins_path }}"
   - "{{ grafana_log_path }}"
   - "{{ grafana_dashboards_path }}"
+grafana_datasource_template_path: templates/datasource.json.j2
 
 # Port & host
 grafana_host: "{{ ansible_nodename }}"
@@ -96,3 +98,5 @@ grafana_datasources:
     basicauth_user: "{{ grafana_datasource_basicauth_user }}"
     basicauth_password: "{{ grafana_datasource_basicauth_password }}"
     default: "{{ grafana_datasource_default }}"
+    jsondata: {}
+    secureJsonData: {}

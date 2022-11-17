@@ -9,5 +9,5 @@
       with_items:
         - net-tools
   roles:
-    - mysql
+    - mysql_role
     - grafana_role

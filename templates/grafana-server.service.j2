@@ -1,0 +1,25 @@
+{{ ansible_managed | comment }}
+[Unit]
+Description=Grafana instance
+Documentation={{ grafana_documentation_link }}
+Wants=network-online.target
+After=network-online.target
+After=postgresql.service mariadb.service mysql.service
+
+[Service]
+EnvironmentFile=/etc/default/grafana-server
+PrivateTmp={{ grafana_private_tmp }}
+User={{ grafana_user }}
+Group={{ grafana_group }}
+WorkingDirectory={{ grafana_working_directory }}
+RuntimeDirectory=grafana
+LimitNOFILE={{ grafana_max_files }}
+LimitNPROC={{ grafana_max_files }}
+LimitCORE={{ grafana_max_files }}
+ExecStart={{ grafana_bin_path }}/{{ grafana_exec_name }} {% for option in grafana_options %}{% if option %}{{ option }} {% endif %}{% endfor %}
+
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+Restart=on-failure
+TimeoutStartSec=0
+KillMode=process

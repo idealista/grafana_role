@@ -12,4 +12,16 @@
     host: "{{ grafana_host }}"
     port: "{{ grafana_port }}"
     state: "{{ grafana_service_state }}"
-    timeout: 30
+    timeout: "{{ grafana_service_timeout }}"
+
+- name: GRAFANA | Wait for health respond 200
+  uri:
+    url: "http://{{ ansible_nodename }}:{{ grafana_port }}/api/health"
+    status_code: "200"
+    method: GET
+    headers:
+      Accept: application/json
+  register: result
+  until: result.status == 200
+  retries: "{{ grafana_service_timeout }}"
+  delay: 1
